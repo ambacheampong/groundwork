@@ -38,3 +38,6 @@ dist-ssr
 # Capacitor native projects
 ios/
 android/
+
+# Supabase CLI local cache — machine-specific, not meant to be tracked
+supabase/.temp/
