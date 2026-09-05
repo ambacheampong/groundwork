@@ -8,7 +8,7 @@ const config: CapacitorConfig = {
     // TODO: replace with your real deployed URL once you've deployed to Vercel
     // (e.g. "https://groundwork.vercel.app" or "https://www.groundwork.com" once
     // you've bought and connected the domain).
-    url: "https://groundwork.vercel.app",
+    url: "https://groundwork-one-lac.vercel.app",
     cleartext: false,
     allowNavigation: ["vercel.app", "*.vercel.app", "groundwork.com", "*.groundwork.com"],
   },
