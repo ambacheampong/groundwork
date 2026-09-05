@@ -78,7 +78,7 @@ function SupportPage() {
           <div className="glass rounded-2xl p-4">
             <Mail className="size-5 text-primary" />
             <p className="mt-2 text-sm font-medium">Email</p>
-            <p className="text-xs text-muted-foreground">support@groundworkapply.com</p>
+            <p className="text-xs text-muted-foreground">groundworkhelpdesk+support@gmail.com</p>
           </div>
           <div className="glass rounded-2xl p-4">
             <LifeBuoy className="size-5 text-primary" />

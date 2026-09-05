@@ -104,7 +104,7 @@ function PrivacyPage() {
               <Link to="/support" className="text-primary underline">
                 Support
               </Link>{" "}
-              or by email to privacy@groundworkapply.com. We respond within 30 days.
+              or by email to groundworkhelpdesk+privacy@gmail.com. We respond within 30 days.
             </p>
           </Section>
         </div>
