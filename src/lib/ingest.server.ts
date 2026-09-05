@@ -19,20 +19,13 @@ interface ExtractedOpp {
 }
 
 const SEARCH_BUCKETS: Array<{ query: string; hint: StudyLevel; category: Category; limit: number }> = [
-  { query: "fully funded undergraduate scholarship 2026 application open", hint: "undergraduate", category: "scholarship", limit: 10 },
-  { query: "international bachelors scholarship 2026 apply deadline", hint: "undergraduate", category: "scholarship", limit: 10 },
-  { query: "undergraduate tuition fee waiver scholarship 2026", hint: "undergraduate", category: "scholarship", limit: 8 },
-  { query: "fully funded masters scholarship 2026 deadline apply", hint: "masters", category: "scholarship", limit: 10 },
-  { query: "MSc scholarship 2026 international students", hint: "masters", category: "scholarship", limit: 8 },
-  { query: "PhD scholarship 2026 fully funded apply", hint: "phd", category: "scholarship", limit: 10 },
-  { query: "PhD funding call 2026 doctoral fellowship", hint: "phd", category: "scholarship", limit: 8 },
-  { query: "postdoctoral fellowship 2026 apply", hint: "fellowship", category: "fellowship", limit: 8 },
-  { query: "early career fellowship 2026 apply", hint: "fellowship", category: "fellowship", limit: 8 },
-  { query: "graduate trainee programme 2026 apply", hint: "job", category: "programme", limit: 8 },
-  { query: "internship summer 2026 paid apply", hint: "job", category: "internship", limit: 8 },
-  { query: "remote software engineer job 2026 apply", hint: "job", category: "job", limit: 6 },
+  { query: "fully funded undergraduate scholarship 2026 application open", hint: "undergraduate", category: "scholarship", limit: 4 },
+  { query: "fully funded masters scholarship 2026 deadline apply", hint: "masters", category: "scholarship", limit: 4 },
+  { query: "PhD scholarship 2026 fully funded apply", hint: "phd", category: "scholarship", limit: 4 },
+  { query: "postdoctoral fellowship 2026 apply", hint: "fellowship", category: "fellowship", limit: 3 },
+  { query: "graduate trainee programme 2026 apply", hint: "job", category: "programme", limit: 3 },
+  { query: "internship summer 2026 paid apply", hint: "job", category: "internship", limit: 3 },
 ];
-
 function getFirecrawl() {
   const apiKey = process.env.FIRECRAWL_API_KEY;
   if (!apiKey) throw new Error("FIRECRAWL_API_KEY not configured");
