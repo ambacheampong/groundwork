@@ -1,4 +1,3 @@
-import mark from "@/assets/groundwork-mark.png.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
@@ -20,7 +19,7 @@ export function Logo({
       )}
     >
       <img
-        src={mark.url}
+        src="/app-icon.png"
         alt="Groundwork"
         className={cn("size-[62%] object-contain", imgClassName)}
       />
