@@ -231,7 +231,6 @@ export async function runIngestion(): Promise<{ inserted: number; updated: numbe
     try {
       const searchRes = await firecrawl.search(bucket.query, {
         limit: bucket.limit,
-        tbs: "qdr:m",
         scrapeOptions: { formats: ["markdown"] },
       });
       const results = ((searchRes as { web?: Array<unknown> }).web ??
