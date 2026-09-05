@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.grant_admin_if_allowlisted() FROM PUBLIC, anon, authenticated;
