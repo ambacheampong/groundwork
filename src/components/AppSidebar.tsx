@@ -1,5 +1,5 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { Compass, Building2, Bookmark, Settings, LogOut, LogIn, Bell, Users, ShieldCheck } from "lucide-react";
+import { Compass, Building2, Bookmark, Settings, LogOut, LogIn, Bell, Users, ShieldCheck, HelpCircle, LifeBuoy } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +27,10 @@ const PRIVATE_NAV = [
   { to: "/alerts", label: "Alerts", icon: Bell },
   { to: "/saved", label: "Saved", icon: Bookmark },
   { to: "/settings", label: "Settings", icon: Settings },
+];
+const HELP_NAV = [
+  { to: "/faq", label: "FAQ", icon: HelpCircle },
+  { to: "/support", label: "Support", icon: LifeBuoy },
 ];
 
 export function AppSidebar() {
@@ -57,6 +61,26 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {NAV.map((item) => {
+                const active = path === item.to || path.startsWith(item.to + "/");
+                return (
+                  <SidebarMenuItem key={item.to}>
+                    <SidebarMenuButton asChild isActive={active} className="rounded-xl">
+                      <Link to={item.to} className="flex items-center gap-2">
+                        <item.icon className="size-4" />
+                        <span>{item.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Help</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {HELP_NAV.map((item) => {
                 const active = path === item.to || path.startsWith(item.to + "/");
                 return (
                   <SidebarMenuItem key={item.to}>

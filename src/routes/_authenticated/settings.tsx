@@ -233,6 +233,12 @@ function SettingsPage() {
           </Row>
         </Section>
 
+        <p className="text-center text-xs text-muted-foreground">
+          <Link to="/privacy" className="underline underline-offset-2 hover:text-foreground">
+            Privacy notice
+          </Link>
+        </p>
+
         <p className="pt-2 text-center text-xs text-muted-foreground">
           Groundwork · v0.1 · Built deliberately.
         </p>
