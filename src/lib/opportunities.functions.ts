@@ -28,7 +28,8 @@ export const listOpportunities = createServerFn({ method: "GET" })
     const supabase = publicClient();
     let query = supabase
       .from("opportunities")
-      .select("*, organisations(id, slug, name, type, logo_url)");
+      .select("*, organisations(id, slug, name, type, logo_url)")
+      .is("hidden_at", null);
 
     if (data.category && data.category !== "all") query = query.eq("category", data.category);
     if (data.level && data.level !== "all") query = query.eq("study_level", data.level);
@@ -60,6 +61,7 @@ export const getOpportunity = createServerFn({ method: "GET" })
     const { data: row, error } = await supabase
       .from("opportunities")
       .select("*, organisations(*)")
+      .is("hidden_at", null)
       .eq("id", data.id)
       .maybeSingle();
     if (error) throw new Error(error.message);
