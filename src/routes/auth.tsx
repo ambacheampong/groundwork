@@ -7,6 +7,7 @@ import { Logo } from "@/components/Logo";
 import { User, Building2, ShieldCheck, ArrowLeft, Upload, MailCheck } from "lucide-react";
 import { submitOrgApplication, redeemInvite, getOrCreateRecoveryReference } from "@/lib/account.functions";
 import { resendVerificationEmail } from "@/lib/auth-recovery.functions";
+import { isCapacitor } from "@/lib/native";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
@@ -153,11 +154,17 @@ function AuthPage() {
   const onGoogle = async () => {
     // supabase-js redirects the browser to Google itself; on return, Supabase's
     // auth listener picks up the session, so there's nothing to do after this call
-    // succeeds other than let the redirect happen.
+    // succeeds other than let the redirect happen. Inside the native app, the
+    // redirect has to go to our custom scheme instead of the site's own https
+    // URL, or the system browser has no way to hand control back to the app.
+    const native = await isCapacitor();
+    const redirectTo = native
+      ? "groundwork://login-callback"
+      : window.location.origin + "/dashboard";
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: window.location.origin + "/dashboard",
+        redirectTo,
       },
     });
     if (error) {

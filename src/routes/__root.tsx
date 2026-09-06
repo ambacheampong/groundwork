@@ -21,6 +21,7 @@ import { reportAppError } from "../lib/error-reporting";
 import { ThemeProvider } from "@/lib/theme";
 import { supabase } from "@/integrations/supabase/client";
 import { Toaster } from "@/components/ui/sonner";
+import { NativeAuthListener } from "@/components/NativeAuthListener";
 
 function NotFoundComponent() {
   return (
@@ -152,6 +153,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <NativeAuthListener />
         <Outlet />
         <Toaster />
       </ThemeProvider>
